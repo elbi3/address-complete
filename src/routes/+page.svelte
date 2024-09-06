@@ -1,13 +1,16 @@
 <script>
     import { enhance } from '$app/forms';
     // export let data;
+    let name = "Get & Check Address";
+    let src = "then-logo.png";
     export let form;
     console.log("form ? ", form);
 </script>
 
 <div class="body">
     <header>
-        <h1>Get Address</h1>
+        <img src={src} alt="{src} is a yellow square with the text 'then' in the lower right corner" />
+        <h1>{name}</h1>
     </header>
     <main>
         {#if form?.error}

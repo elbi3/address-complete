@@ -48,3 +48,5 @@ export const actions = {
 }
 
 //https://developers.google.com/maps/documentation/places/web-service/place-autocomplete
+
+//https://fireship.io/snippets/setup-google-maps-with-svelte/
