@@ -1,17 +1,68 @@
 <script>
+    import { PUBLIC_GOOGLE_MAPS_API_KEY } from '$env/static/public';
     import { enhance } from '$app/forms';
+    import Header from './Header.svelte';
+
+    import { onMount } from 'svelte';
+    import { Loader } from "@googlemaps/js-api-loader";
+
     // export let data;
-    let name = "Get & Check Address";
-    let src = "then-logo.png";
     export let form;
+
     console.log("form ? ", form);
+
+
+    let autocomplete;
+    let address;
+    let displayAddressString;
+    let displayAddressComponents;
+    const options = {
+        componentRestrictions: { country: 'us' },
+        strictBounds: false
+    };
+
+    const loader = new Loader({
+            apiKey: PUBLIC_GOOGLE_MAPS_API_KEY,
+            version: "weekly",
+            libraries: ["places"] 
+    });
+    
+onMount(async () => {
+    initAutocomplete();
+})
+
+async function initAutocomplete() {
+    try {
+        loader
+            .importLibrary("places")
+            .then(({Autocomplete}) => {
+                autocomplete = new Autocomplete(document.getElementById('streetAddress'), options);
+                autocomplete.addListener('place_changed', listenerFunc);
+            })
+            .catch((e) => {
+                console.log("e: ", e);
+            });
+    } catch (error) {
+        console.error("error occured: ", error.message);
+    }
+
+  function listenerFunc() {
+    address = autocomplete.getPlace();
+    let result = JSON.stringify(address);
+    let { address_components, formatted_address, photos } = address;
+    displayAddressString = formatted_address;
+    displayAddressComponents = address_components;
+    console.log("photos: ", photos);
+    console.log("formatted_address: ", formatted_address);
+    console.log("address_components: ", address_components);
+    // console.log("returned address: ", result);
+  }
+}
+
 </script>
 
-<div class="body">
-    <header>
-        <img src={src} alt="{src} is a yellow square with the text 'then' in the lower right corner" />
-        <h1>{name}</h1>
-    </header>
+<div class="main-container">
+    <Header />
     <main>
         {#if form?.error}
         <p>{form.error}</p>
@@ -34,18 +85,36 @@
             </div>
         </form>
         <div>
-            <h2>data returned from the request</h2>
+            {#if displayAddressString}
+                <h2>Formatted Address:</h2>
+                <p>{displayAddressString}</p>
+            {/if}
+            {#if displayAddressComponents}
             <ul>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <h2>Address Components:</h2>
+                {#each displayAddressComponents as component}
+                    <br>
+                    <li>"{component.short_name}"</li>
+                    <p>is a kind of: </p>
+                    <p>"{component.types}"</p>
+                {/each}
             </ul>
+            {/if}
         </div>
         {#if form?.success}
             <p>Successfully submitted!</p>
         {/if}
+
     </main>
     <footer>
 
     </footer>
 </div>
+
+<style>
+    @import "../style.css";
+    .main-container {
+        display: grid;
+        gap: 3rem;
+    }
+</style>
