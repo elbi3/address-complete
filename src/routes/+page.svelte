@@ -72,14 +72,6 @@ async function initAutocomplete() {
                 <label for="streetAddress">Street Address: </label>
                 <input type="text" name="street" value={form?.street ?? ''} id="streetAddress">
             </div>
-            <div class="input-cont">
-                <label for="myLocality">City</label>
-                <input type="text" name="locality" value={form?.locality ?? ''} id="myLocality">
-            </div>
-            <div class="input-cont">
-                <label for="myRegion">Country</label>
-                <input type="text" name="region" value={form?.region ?? ''} id="myRegion">
-            </div>
             <div class="input-submit">
                 <button type="submit">Get</button>
             </div>
