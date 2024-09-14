@@ -11,7 +11,7 @@
 <style>
     .site-header {
         align-items: flex-end;
-        background-color: rgb(82, 82, 178);
+        background-color: rgb(47, 47, 107);      
         color: rgb(205, 185, 241);
         display: flex;
     }
@@ -19,6 +19,6 @@
         padding-left: 1rem;
     }
     .site-header > * {
-        background-color: rgb(82, 82, 178);
+        background-color: rgb(47, 47, 107);
     }
 </style>

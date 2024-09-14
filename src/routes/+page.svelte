@@ -63,14 +63,14 @@ async function initAutocomplete() {
 
 <div class="main-container">
     <Header />
-    <main>
+    <main class="main-content">
         {#if form?.error}
         <p>{form.error}</p>
         {/if}
         <form class="my-form" method="POST" use:enhance>
             <div class="input-cont">
                 <label for="streetAddress">Street Address: </label>
-                <input type="text" name="street" value={form?.street ?? ''} id="streetAddress">
+                <input type="text" name="street" value={form?.street ?? ''} id="streetAddress" required>
             </div>
             <div class="input-submit">
                 <button type="submit">Get</button>
@@ -81,7 +81,7 @@ async function initAutocomplete() {
                 <h2>Formatted Address:</h2>
                 <p>{displayAddressString}</p>
             {/if}
-            {#if displayAddressComponents}
+            <!-- {#if displayAddressComponents}
             <ul>
                 <h2>Address Components:</h2>
                 {#each displayAddressComponents as component}
@@ -91,11 +91,9 @@ async function initAutocomplete() {
                     <p>"{component.types}"</p>
                 {/each}
             </ul>
-            {/if}
+            {/if} -->
+            <!-- keeping this^ for reference -->
         </div>
-        {#if form?.success}
-            <p>Successfully submitted!</p>
-        {/if}
 
     </main>
     <footer>
@@ -106,7 +104,33 @@ async function initAutocomplete() {
 <style>
     @import "../style.css";
     .main-container {
+        color: darkblue;
         display: grid;
         gap: 3rem;
+    }
+    .main-content{
+        display: grid;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .my-form {
+        display: grid;
+        gap: 1rem;
+    }
+
+    input {
+        background-color: aliceblue;
+        border-radius: .1rem;
+        padding: .3rem;
+    }
+    .input-submit > * {
+        align-self: center;
+        background-color: rgb(222, 197, 233);
+        cursor: pointer;
+        padding: .3rem;
+    }  
+
+    .input-submit > *:hover {
+        background-color: pink;
     }
 </style>
