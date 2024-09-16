@@ -72,9 +72,9 @@ async function initAutocomplete() {
                 <label for="streetAddress">Street Address: </label>
                 <input type="text" name="street" value={form?.street ?? ''} id="streetAddress" required>
             </div>
-            <div class="input-submit">
+            <!-- <div class="input-submit">
                 <button type="submit">Get</button>
-            </div>
+            </div> -->
         </form>
         <div>
             {#if displayAddressString}
