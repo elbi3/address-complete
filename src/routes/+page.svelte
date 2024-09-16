@@ -61,15 +61,9 @@ async function initAutocomplete() {
 
 </script>
 
-<<<<<<< HEAD
 <div class="main-container">
     <Header />
     <main class="main-content">
-=======
-<div class="main-container">
-    <Header />
-    <main class="main-content">
->>>>>>> 3604cc0 (Cleanup files)
         {#if form?.error}
         <p>{form.error}</p>
         {/if}
@@ -77,114 +71,22 @@ async function initAutocomplete() {
             <div class="input-cont">
                 <label for="streetAddress">Street Address: </label>
                 <input type="text" name="street" value={form?.street ?? ''} id="streetAddress" required>
-                <input type="text" name="street" value={form?.street ?? ''} id="streetAddress" required>
             </div>
             <!-- <div class="input-submit">
                 <button type="submit">Get</button>
             </div> -->
         </form>
         <div>
-<<<<<<< HEAD
-            <h2>data returned from the request</h2>
-=======
             {#if displayAddressString}
                 <h2>Formatted Address:</h2>
                 <p>{displayAddressString}</p>
             {/if}
-            <!-- {#if displayAddressComponents}
->>>>>>> 3604cc0 (Cleanup files)
-            <ul>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-            </ul>
-<<<<<<< HEAD
         </div>
-        {#if form?.success}
-            <p>Successfully submitted!</p>
-        {/if}
-=======
-            {/if} -->
-            <!-- keeping this^ for reference -->
-        </div>
-
->>>>>>> 3604cc0 (Cleanup files)
     </main>
     <footer>
 
     </footer>
 </div>
-<<<<<<< HEAD
-=======
-
-<style>
-    @import "../style.css";
-    .main-container {
-        color: darkblue;
-        display: grid;
-        gap: 3rem;
-    }
-    .main-content{
-        display: grid;
-        gap: 1rem;
-        justify-content: center;
-    }
-    .my-form {
-        display: grid;
-        gap: 1rem;
-    }
-
-    input {
-        background-color: aliceblue;
-        border-radius: .1rem;
-        padding: .3rem;
-    }
-    .input-submit > * {
-        align-self: center;
-        background-color: rgb(222, 197, 233);
-        cursor: pointer;
-        padding: .3rem;
-    }  
-
-    .input-submit > *:hover {
-        background-color: pink;
-    }
-</style>
->>>>>>> 3604cc0 (Cleanup files)
-
-<style>
-    @import "../style.css";
-    .main-container {
-        color: darkblue;
-        display: grid;
-        gap: 3rem;
-    }
-    .main-content{
-        display: grid;
-        gap: 1rem;
-        justify-content: center;
-    }
-    .my-form {
-        display: grid;
-        gap: 1rem;
-    }
-
-    input {
-        background-color: aliceblue;
-        border-radius: .1rem;
-        padding: .3rem;
-    }
-    .input-submit > * {
-        align-self: center;
-        background-color: rgb(222, 197, 233);
-        cursor: pointer;
-        padding: .3rem;
-    }  
-
-    .input-submit > *:hover {
-        background-color: pink;
-    }
-</style>
 
 <style>
     @import "../style.css";
