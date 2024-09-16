@@ -109,6 +109,7 @@ async function initAutocomplete() {
         gap: 3rem;
     }
     .main-content{
+        padding: .3rem;
         display: grid;
         gap: 1rem;
         justify-content: center;
