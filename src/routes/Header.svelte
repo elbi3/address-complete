@@ -1,10 +1,10 @@
 <script>
     let name = "Get & Check Address";
-    let src = "then-logo.png";
+    let src = "favicon.png";
 </script>
 
 <header class="site-header">
-    <img {src} alt="{src} is a yellow square with the text 'then' in the lower right corner" />
+    <img class="svelte-icon" {src} alt="{src} is a yellow square with the text 'then' in the lower right corner" />
     <h1 class="site-title">{name}</h1>
 </header>
 
@@ -20,5 +20,11 @@
     }
     .site-header > * {
         background-color: rgb(47, 47, 107);
+    }
+
+    .svelte-icon {
+        align-self: center;
+        padding: .5rem;
+        max-height: 4rem;
     }
 </style>
