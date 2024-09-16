@@ -22,3 +22,4 @@ vite.config.ts.timestamp-*
 /src/routes/Temp.svelte
 
 notes.md
+src/routes/+page.server.js

@@ -111,7 +111,7 @@ async function initAutocomplete() {
         border-radius: .1rem;
         padding: .3rem;
     }
-    .input-submit > * {
+    /* .input-submit > * {
         align-self: center;
         background-color: rgb(222, 197, 233);
         cursor: pointer;
@@ -120,5 +120,5 @@ async function initAutocomplete() {
 
     .input-submit > *:hover {
         background-color: pink;
-    }
+    } */
 </style>

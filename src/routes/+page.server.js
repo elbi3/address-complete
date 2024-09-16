@@ -1,4 +1,4 @@
-import { API_KEY } from '$env/dynamic/private';
+import { API_KEY } from '$env/static/private';
 import { error } from '@sveltejs/kit';
 
 export const actions = {
