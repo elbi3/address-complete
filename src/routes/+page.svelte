@@ -1,5 +1,5 @@
 <script>
-    import { PUBLIC_GOOGLE_MAPS_API_KEY } from '$env/static/public';
+    import { PUBLIC_GOOGLE_MAPS_API_KEY } from '$env/dynamic/public';
     import { enhance } from '$app/forms';
     import Header from './Header.svelte';
 
